@@ -129,6 +129,12 @@ local function handleChatMessage(message, player)
             end
         end
     end
+
+    -- Check for ";stop" command
+    if string.sub(message.Text, 1, 5) == ";stop" then
+        isResettingManually.Value = false -- Stop continuous resetting
+        print("Resetting stopped.")
+    end
 end
 
 -- Connect to the new TextChatService
